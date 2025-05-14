@@ -143,6 +143,13 @@ python scripts/rsl_rl/train_student_policy.py \
 This assumes that you have already trained the teacher policy as there is no provided teacher policy in the repo. Change the filename to match the checkpoint you trained.
 The exact path of the teacher policy does not matter, but it is recommended to store it in the data folder. If stored outside the data folder, you might need to provide the full path.
 
+## Multi-GPU
+It is possible to train on a node with multiple gpus or multiple nodes with multiple gpues.
+In order to train the teacher on a machine with 4 gpus:
+```bash
+python -m torch.distributed.run --nnodes=1 --nproc_per_node=4 scripts/rsl_rl/train_teacher.py --num_envs=1024 --headless --distributed
+```
+This will generate 4 IsaacSim simulation, each containing 1024 environments.
 
 ## General Remarks for Training
 

@@ -117,6 +117,7 @@ folder as the included data library will handle relative path searching, which i
 
 For more details, refer to the [human2humanoid repository](https://github.com/LeCAR-Lab/human2humanoid/tree/main?tab=readme-ov-file#motion-retargeting).
 
+If you have a configured conda environment with Isaaclab you can launch the scripts with `python`, otherwise use the python bundled with Isaaclab `${ISAACLAB_PATH:?}/isaaclab.sh -p`
 ## Teacher Policy
 
 

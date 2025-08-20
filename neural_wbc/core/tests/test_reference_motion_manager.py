@@ -64,10 +64,10 @@ class TestReferenceMotionManager(unittest.TestCase):
         ref_motion_state: ReferenceMotionState = mgr.get_state_from_motion_lib_cache(
             episode_length_buf=episode_length_buf
         )
-        self.assertAlmostEqual(ref_motion_state.body_rot[0, 0, 0], 1)
-        self.assertAlmostEqual(ref_motion_state.body_rot[0, 0, 1], 0)
-        self.assertAlmostEqual(ref_motion_state.body_rot[0, 0, 2], 0)
-        self.assertAlmostEqual(ref_motion_state.body_rot[0, 0, 3], 0)
+        self.assertAlmostEqual(ref_motion_state.body_rot[0, 0, 0].item(), 1)
+        self.assertAlmostEqual(ref_motion_state.body_rot[0, 0, 1].item(), 0)
+        self.assertAlmostEqual(ref_motion_state.body_rot[0, 0, 2].item(), 0)
+        self.assertAlmostEqual(ref_motion_state.body_rot[0, 0, 3].item(), 0)
 
     def test_reset_motion_start_times_after_load_motion(self):
         mgr = self._create_reference_motion_manager()

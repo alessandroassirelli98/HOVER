@@ -336,6 +336,9 @@ class NeuralWBCEnv(EnvironmentWrapper):
         current_obs = self._compute_observations()
         return current_obs["student_policy"]
 
+    def get_teacher_observations(self):
+        pass
+
     def _reset_robot_state_and_motion(self, env_ids: list | torch.Tensor | None = None):
         """Resets the robot state and the reference motion.
 

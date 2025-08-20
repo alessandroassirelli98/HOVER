@@ -47,7 +47,7 @@ class TestObservations(unittest.TestCase):
 
         # Mocking the Articulation and its attributes
         self.asset = Mock(spec=Articulation)
-        self.asset.data.joint_friction = torch.randn((self.num_envs, 2))
+        self.asset.data.joint_friction_coeff = torch.randn((self.num_envs, 2))
 
     def test_compute_privileged_observations(self):
         privileged_obs, privileged_obs_dict = compute_privileged_observations(env=self.env, asset=self.asset)
